@@ -1,0 +1,34 @@
+import random
+print("Enter a choice \n 1.Rock \n 2.Paper \n 3.Scissors\n")
+choice=int(input("Enter a choice:"))
+if choice==1:
+    ch_name="Rock"
+elif choice==2:
+    ch_name="Paper"
+else:
+    ch_name="Scissors"
+print("User's choice is",ch_name)
+print("Now it's computer's turn...")
+comp_choice=random.randint(0,2)
+if comp_choice==1:
+    comp_name="Rock"
+elif comp_choice==2:
+    comp_name="Paper"
+else:
+    comp_name="Scissors"
+print("Computer's choice is",comp_name)
+if choice==comp_choice:
+    res="DRAW"
+elif choice==1 and comp_choice==2 or comp_choice==1 and choice==2:
+    res="Paper"
+elif choice==1 and comp_choice==3 or comp_choice==1 and choice==3:
+    res="Rock"
+else:
+    res="Scissors"
+if res=="DRAW":
+    print("It's a tie")
+elif res==ch_name:
+    print("User wins")
+else:
+    print("Computer wins")
+print("Thanks for playing!")
